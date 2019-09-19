@@ -28,7 +28,6 @@ public:
     bool Pop(char &x);
     bool getTop(char &x) const;
     bool IsEmpty() const { return (top == NULL) ? true : false; }
-    int getSize() const;
     void makeEmpty();
 };
 
@@ -66,17 +65,6 @@ bool Stack::getTop(char &x) const
         return false;
     x = top->a;
     return true;
-};
-int Stack::getSize() const
-{
-    Node *p = top;
-    int k = 0;
-    while (p != NULL)
-    {
-        p = p->next;
-        k++;
-    }
-    return k;
 };
 
 int main()
